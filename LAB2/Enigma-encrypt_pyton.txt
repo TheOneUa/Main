@@ -1,0 +1,31 @@
+#ШИФРАТОР
+
+print('enter shift =')
+shift = int(input())
+print('enter MESSAGE: ')
+message = input()
+result = []
+
+alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+rotor1 =   'BDFHJLCPRTXVZNYEIWGAKMUSQO'
+rotor2 =   'AJDKSIRUXBLHWTMCQGZNPYFVOE'
+rotor3 =   'EKMFLGDQVZNTOWYHXUSPAIBRCJ'
+
+for n in range (0,len(message)):
+    index = int(alphabet.find(message[n]))
+    index = shift + index + n
+    if index > 25:
+            index = index % 26
+    if index < 0:
+            index = index % 26
+
+    letter=str(rotor1[index])
+
+    index = int(alphabet.find(letter))
+    letter=str(rotor2[index]) 
+
+    index = int(alphabet.find(letter))
+    letter=str(rotor3[index])
+    result.append(letter)
+
+print("message=", ''.join(result))

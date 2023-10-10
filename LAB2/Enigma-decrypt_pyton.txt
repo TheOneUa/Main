@@ -1,0 +1,37 @@
+#дешифратор
+
+print('input shift = ')
+shift = int(input())
+print('input message: ')
+message = input()
+result = []
+
+alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+rotor1 =   'BDFHJLCPRTXVZNYEIWGAKMUSQO'
+rotor2 =   'AJDKSIRUXBLHWTMCQGZNPYFVOE'
+rotor3 =   'EKMFLGDQVZNTOWYHXUSPAIBRCJ'
+
+for n in range (0,len(message)):
+    index = int(rotor3.find(message[n]))
+    #3 rotor THSU
+    letter=str(alphabet[index])
+
+    #3 rotor NLEH
+    index = int(rotor2.find(letter))
+    letter=str(alphabet[index])
+
+    #2 rotor  
+    index = int(rotor1.find(letter))
+    letter=str(alphabet[index]) 
+
+    #shift 
+    index =  index - shift - n
+    if index > 25:
+            index = index % 26
+    if index < 0:
+            index = index % 26
+
+    letter=str(alphabet[index])
+    result.append(letter)
+
+print("message=", ''.join(result))
