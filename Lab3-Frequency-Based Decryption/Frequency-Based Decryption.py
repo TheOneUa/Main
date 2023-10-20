@@ -1,6 +1,7 @@
 import sys
 import math
 from collections import Counter
+input = input()
 alphabet='abcdefghijklmnopqrstuvwxyz'
 alphabet2='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
@@ -13,9 +14,9 @@ character_count = Counter(text)
 most_common_letter = character_count.most_common(1)[0][0]
 most_common_letter_count = character_count.most_common(1)[0][1]
 #самая употребляемая буква
-print(character_count)
-print(most_common_letter)
-print(most_common_letter_count)
+#print(character_count)
+#print(most_common_letter)
+#print(most_common_letter_count)
 
 
 #находим сдвиг
@@ -23,7 +24,7 @@ for i in range (len(alphabet)):
   if alphabet[i] == most_common_letter[0]:
     i = 4 - i
     shift = i
-    print('shift = ', shift)
+#    print('shift = ', shift)
     break
 
 #decode shift:
