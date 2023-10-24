@@ -13,13 +13,13 @@ character_count = Counter(text)
 # Get the most common letter and its count
 most_common_letter = character_count.most_common(1)[0][0]
 most_common_letter_count = character_count.most_common(1)[0][1]
-#самая употребляемая буква
+#most used letter
 #print(character_count)
 #print(most_common_letter)
 #print(most_common_letter_count)
 
 
-#находим сдвиг
+#switch
 for i in range (len(alphabet)):
   if alphabet[i] == most_common_letter[0]:
     i = 4 - i
